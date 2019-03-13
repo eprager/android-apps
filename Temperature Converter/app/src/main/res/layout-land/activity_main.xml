@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="130dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Conversion:"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/f2cbox"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Farenheit to Celsius"
+            android:textColor="@color/colorAccent" />
+
+        <RadioButton
+            android:id="@+id/c2fbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Celsius to Farenheit" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/temp"
+        android:layout_width="112dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="92dp"
+        android:background="#c7c7c7"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/equals" />
+
+    <TextView
+        android:id="@+id/equals"
+        android:layout_width="34dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="="
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/output"
+        app:layout_constraintStart_toEndOf="@+id/temp"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="104dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="68dp"
+        android:background="#c7c7c7"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/equals"
+        tools:textAlignment="center"
+        tools:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/button"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
+        android:layout_width="118dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonClicked"
+        android:text="CONVERT"
+        app:layout_constraintBottom_toTopOf="@+id/historyBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equals" />
+
+    <ScrollView
+        android:id="@+id/historyBox"
+        android:layout_width="360dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp" />
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
